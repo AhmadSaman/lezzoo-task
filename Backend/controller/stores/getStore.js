@@ -4,10 +4,7 @@ const ErrHandling = require("../../errHandling");
 
 const getStore = async (req, res, next) => {
   const storeId = req.params.storeId;
-
   res.send(storeId);
-  return;
-
   let store;
   try {
     store = await db.select().from("stores").where("s_id", storeId);

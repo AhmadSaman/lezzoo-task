@@ -1,12 +1,10 @@
-import { Button, Text } from "@chakra-ui/react";
 import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
-
+import Navbar from "./components/navbar";
 function App() {
   return (
     <div className="App">
-      <Text>hey</Text>
-      <Button variant={"solid"}>click</Button>
+      <Navbar />
       <Switch>
         <Route path={"/home"} component={() => <Home />} />
       </Switch>

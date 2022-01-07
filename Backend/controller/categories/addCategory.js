@@ -3,8 +3,8 @@ const ErrHandling = require("../../errHandling");
 
 const addCategory = async (req, res, next) => {
   const storeId = req.params.storeId;
-
-  const { name, image } = req.body;
+  // problem with image
+  const { name } = req.body;
   const file = image[0].thumbUrl ? image[0].thumbUrl : "";
 
   const checkStore = await db
@@ -19,7 +19,7 @@ const addCategory = async (req, res, next) => {
     const id = await db("categories").insert({
       store_id: storeId,
       name: name,
-      image: file,
+      // image: file,
     });
 
     return res.status(201).json({

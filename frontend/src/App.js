@@ -4,10 +4,11 @@ import Navbar from "./components/navbar";
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Switch>
-        <Route path={"/home"} component={() => <Home />} />
-      </Switch>
+      <Navbar>
+        <Switch>
+          <Route path={"/home"} component={() => <Home />} />
+        </Switch>
+      </Navbar>
     </div>
   );
 }
